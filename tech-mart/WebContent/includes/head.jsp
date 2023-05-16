@@ -12,13 +12,13 @@
 
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
 
-<link rel="stylesheet" href="/static/css/owl.carousel.css">
-<link rel="stylesheet" href="/static/style.css">
-<link rel="stylesheet" href="/static/css/responsive.css">
+<link rel="stylesheet" href="static/css/owl.carousel.css">
+<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="static/css/responsive.css">
