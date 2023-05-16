@@ -3,33 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-
-<link
-	href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600'
-	rel='stylesheet' type='text/css'>
-<link
-	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300'
-	rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,100'
-	rel='stylesheet' type='text/css'>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/static/css/bootstrap.min.css'/>">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/static/css/font-awesome.min.css'/>">
-
-<!-- Custom CSS -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/static/css/owl.carousel.css'/>">
-<link rel="stylesheet" type="text/css" href="/static/style.css">
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/static/css/responsive.css'/>">
+<jsp:include page="/includes/head.jsp" />
 </head>
 <body>
+<c:set value="${sessuser}" var="user"/>
 	<div class="header-area">
 		<div class="container">
 			<div class="row">
@@ -40,9 +17,16 @@
 							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
 							<li><a href="cart.html"><i class="fa fa-user"></i> My
 									Cart</a></li>
-							<li><a href="checkout.html"><i class="fa fa-user"></i>
-									Checkout</a></li>
-							<li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+							<li><a href="checkout.html"><i class="fa fa-user"></i>Checkout</a></li>
+							<c:choose>
+								<c:when test="${user==null}">
+									<li><a href="/login"><i class="fa fa-user"></i> Login</a></li>
+  								</c:when>
+								<c:otherwise> 
+									<li><a href="#"><i class="fa fa-user"></i><%=session.getAttribute("sessuser")%></a></li>
+									<li><a href="logout">Logout</a></li>
+  								</c:otherwise>
+							</c:choose>
 						</ul>
 					</div>
 				</div>

@@ -14,7 +14,8 @@ public class TestDB {
 	public static void main(String[] args) {
 		for(User user: getAllUsers()) {
 			System.out.println(user.getId());
-			System.out.println(user.getName());
+			System.out.println(user.getFirstName());
+			System.out.println(user.getLastName());
 			System.out.println(user.getEmail());
 			System.out.println(user.getPassword());
 		}
@@ -35,12 +36,13 @@ public class TestDB {
 			while (rs.next()) {
 				int id = rs.getInt(1);
 
-				String name = rs.getString(2);
-				String email = rs.getString(3);
-				String password = rs.getString(4);
+				String fisrtName = rs.getString(2);
+				String lartName = rs.getString(3);
+				String email = rs.getString(4);
+				String password = rs.getString(5);
 
-				User tmpMagazine = new User(id, name, email, password);
-				sl.add(tmpMagazine);
+				User tmpUser = new User(id, fisrtName, lartName, email, password);
+				sl.add(tmpUser);
 			}
 			rs.close();
 			statement.close();
