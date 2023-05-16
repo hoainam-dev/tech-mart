@@ -2,18 +2,42 @@ package model;
 
 public class User {
 	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String password;
+	private boolean remember;
 	
 	public User() {
 	}
-
-	public User(int id, String name, String email, String password) {
-		this.id = id;
-		this.name = name;
+	
+	public User(String email, String password) {
 		this.email = email;
 		this.password = password;
+	}
+	
+	public User(String firstName, String lastName, String email, String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
+	
+	public User(int id, String firstName, String lastName, String email, String password) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
+	
+	public User(int id, String firstName, String lastName, String email, String password, boolean remember) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.remember = remember;
 	}
 
 	public int getId() {
@@ -24,12 +48,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
@@ -48,6 +80,12 @@ public class User {
 		this.password = password;
 	}
 
-	
+	public boolean isRemember() {
+		return remember;
+	}
+
+	public void setRemember(boolean remember) {
+		this.remember = remember;
+	}
 	
 }

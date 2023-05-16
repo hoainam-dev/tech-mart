@@ -32,11 +32,12 @@ public class UserDAO {
 			while (rs.next()) {
 				int id = rs.getInt(1);
 
-				String name = rs.getString(2);
-				String email = rs.getString(3);
-				String password = rs.getString(4);
+				String fisrtName = rs.getString(2);
+				String lartName = rs.getString(3);
+				String email = rs.getString(4);
+				String password = rs.getString(5);
 
-				User tmpUser = new User(id, name, email, password);
+				User tmpUser = new User(id, fisrtName, lartName, email, password);
 				sl.add(tmpUser);
 			}
 			rs.close();
@@ -46,5 +47,30 @@ public class UserDAO {
 			Logger.getLogger(TestDB.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		return sl;
+	}
+
+
+	public void addUser(User user) {
+
+		String sql = "INSERT INTO users(firstname, lastname, email, password)\n" + "VALUES (?, ?, ?, ?);";
+		ConnectDB db = ConnectDB.getInstance();
+		Connection con = null;
+		PreparedStatement statement = null;
+		try {
+
+			con = db.openConnection();
+			statement = con.prepareStatement(sql);
+			statement.setString(1, user.getFirstName());
+			statement.setString(2, user.getLastName());
+			statement.setString(3, user.getEmail());
+			statement.setString(4, user.getPassword());
+			statement.execute();
+			
+			statement.close();
+			con.close();
+		} catch (Exception ex) {
+			Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
 	}
 }
