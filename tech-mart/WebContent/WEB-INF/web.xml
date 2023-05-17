@@ -12,6 +12,10 @@
     <servlet-class>controller.ProductController</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>DetailProductController</servlet-name>
+    <servlet-class>controller.ProductDetailController</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>CategoryController</servlet-name>
     <servlet-class>controller.CategoryController</servlet-class>
   </servlet>
@@ -38,6 +42,10 @@
     <url-pattern>/product</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>DetailProductController</servlet-name>
+    <url-pattern>/detail-product</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>CategoryController</servlet-name>
     <url-pattern>/admin/category</url-pattern>
   </servlet-mapping>
@@ -53,6 +61,7 @@
     <servlet-name>RegisterController</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  
   
   <!-- filter -->
   <filter>

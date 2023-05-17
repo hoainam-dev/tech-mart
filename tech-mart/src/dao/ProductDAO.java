@@ -49,7 +49,7 @@ public class ProductDAO {
 					}
 				}
 
-				Product tmpProduct = new Product(id, category, name, description, price, image);
+				Product tmpProduct = new Product(id, name, category, description, price, image);
 				sl.add(tmpProduct);
 			}
 			rs.close();

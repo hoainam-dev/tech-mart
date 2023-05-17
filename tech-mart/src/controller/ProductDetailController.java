@@ -1,55 +1,39 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.CategoryDAO;
 import dao.ProductDAO;
-import model.Category;
 import model.Product;
 
 
-public class ProductController extends HttpServlet {
+public class ProductDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
-    public ProductController() {
+    public ProductDetailController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ProductDAO productDAO = new ProductDAO();
-		CategoryDAO categoryDAO = new CategoryDAO();
 		
-		List<Category> categories = categoryDAO.getAllCategory();
-		request.setAttribute("categories", categories);
+		String id = request.getParameter("id");
 		
-		List<Product> products = new ArrayList<>();
-		
-		String category = request.getParameter("category");
-		
-		if(category!=null) {
+		if(id!=null) {
 			for (Product product : productDAO.getAllProduct()) {
-				if(category.equals(product.getCategory())){
-					products.add(product);
+				if(Integer.parseInt(id)==product.getId()){
+					request.setAttribute("product", product);
 				}
 			}
-		}else {
-			products = productDAO.getAllProduct();
 		}
-		
-		
-		request.setAttribute("products", products);
-		request.getRequestDispatcher("/views/client/product/product.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/client/product/detail-product.jsp").forward(request, response);
 	}
 
 
