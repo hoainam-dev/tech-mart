@@ -23,9 +23,9 @@
 					class="key">Category</span><b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="/product">Clear</a></li>
-				<c:forEach items="${categories}" var="category">
-					<li><a href="/product?category=${category.name}">${category.name}</a></li>
-				</c:forEach>
+					<c:forEach items="${categories}" var="category">
+						<li><a href="/product?category=${category.name}">${category.name}</a></li>
+					</c:forEach>
 				</ul></li>
 		</ul>
 	</div>
@@ -35,27 +35,31 @@
 	<div class="zigzag-bottom"></div>
 	<div class="container">
 		<div class="row">
-		<c:forEach items="${products}" var="product">
-			<div class="col-md-3 col-sm-6">
-				<div class="single-shop-product">
-					<div class="product-upper">
-						<img src="${product.image}" alt="">
-					</div>
-					<h2>
-						<a href="">${product.name}</a>
-					</h2>
-					<div class="product-carousel-price">
-						<ins>${product.price}VND</ins>
-					</div>
+			<c:forEach items="${products}" var="product">
+				<div class="col-md-3 col-sm-6">
+					<div class="single-shop-product">
+						<div class="product-upper">
+							<img src="${product.image}" alt="" class="image-shop-product">
+						</div>
+						<hr/>
+						<h2>
+							<a href="">${product.name}</a>
+						</h2>
+						<div class="product-carousel-price">
+							<ins>${product.price}VND</ins>
+						</div>
 
-					<div class="product-option-shop">
-						<a class="add_to_cart_button" data-quantity="1"
-							data-product_sku="" data-product_id="70" rel="nofollow"
-							href="#">Add to cart</a>
+						<div class="product-option-shop">
+							<a class="add_to_cart_button" data-quantity="1"
+								data-product_sku="" data-product_id="70" rel="nofollow" href="#">Add
+								to cart</a>
+								<a class="add_to_cart_button" data-quantity="1"
+								data-product_sku="" data-product_id="70" rel="nofollow"
+								href="/detail-product?id=${product.id}" style="margin-left:25px;">See detail</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
 		</div>
 		<div class="row">
 			<div class="col-md-12">

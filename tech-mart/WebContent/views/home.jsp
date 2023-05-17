@@ -3,58 +3,59 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
-.product-f-image {
-	height: 250px;
-	padding: 30px;
+.image {
+	height: 270px;
+	padding: 10px;
+	width: max;
 }
 </style>
 
 <div class="slider-area">
-		<!-- Slider -->
-		<div class="block-slider block-slider4">
-			<ul class="" id="bxslider-home4">
-				<li><img src="static/img/h4-slide.png" alt="Slide">
-					<div class="caption-group">
-						<h2 class="caption title">
-							iPhone <span class="primary">6 <strong>Plus</strong></span>
-						</h2>
-						<h4 class="caption subtitle">Dual SIM</h4>
-						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
-							now</a>
-					</div></li>
-				<li><img src="static/img/h4-slide2.png" alt="Slide">
-					<div class="caption-group">
-						<h2 class="caption title">
-							by one, get one <span class="primary">50% <strong>off</strong></span>
-						</h2>
-						<h4 class="caption subtitle">school supplies & backpacks.*</h4>
-						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
-							now</a>
-					</div></li>
-				<li><img src="static/img/h4-slide3.png" alt="Slide">
-					<div class="caption-group">
-						<h2 class="caption title">
-							Apple <span class="primary">Store <strong>Ipod</strong></span>
-						</h2>
-						<h4 class="caption subtitle">Select Item</h4>
-						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
-							now</a>
-					</div></li>
-				<li><img src="static/img/h4-slide4.png" alt="Slide">
-					<div class="caption-group">
-						<h2 class="caption title">
-							Apple <span class="primary">Store <strong>Ipod</strong></span>
-						</h2>
-						<h4 class="caption subtitle">& Phone</h4>
-						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
-							now</a>
-					</div></li>
-			</ul>
-		</div>
-		<!-- ./Slider -->
+	<!-- Slider -->
+	<div class="block-slider block-slider4">
+		<ul class="" id="bxslider-home4">
+			<li><img src="static/img/h4-slide.png" alt="Slide">
+				<div class="caption-group">
+					<h2 class="caption title">
+						iPhone <span class="primary">6 <strong>Plus</strong></span>
+					</h2>
+					<h4 class="caption subtitle">Dual SIM</h4>
+					<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+						now</a>
+				</div></li>
+			<li><img src="static/img/h4-slide2.png" alt="Slide">
+				<div class="caption-group">
+					<h2 class="caption title">
+						by one, get one <span class="primary">50% <strong>off</strong></span>
+					</h2>
+					<h4 class="caption subtitle">school supplies & backpacks.*</h4>
+					<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+						now</a>
+				</div></li>
+			<li><img src="static/img/h4-slide3.png" alt="Slide">
+				<div class="caption-group">
+					<h2 class="caption title">
+						Apple <span class="primary">Store <strong>Ipod</strong></span>
+					</h2>
+					<h4 class="caption subtitle">Select Item</h4>
+					<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+						now</a>
+				</div></li>
+			<li><img src="static/img/h4-slide4.png" alt="Slide">
+				<div class="caption-group">
+					<h2 class="caption title">
+						Apple <span class="primary">Store <strong>Ipod</strong></span>
+					</h2>
+					<h4 class="caption subtitle">& Phone</h4>
+					<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+						now</a>
+				</div></li>
+		</ul>
 	</div>
-	<!-- End slider area -->
-	
+	<!-- ./Slider -->
+</div>
+<!-- End slider area -->
+
 <!-- main area -->
 <div class="promo-area">
 	<div class="zigzag-bottom"></div>
@@ -99,21 +100,23 @@
 						<c:forEach items="${products}" var="product">
 							<div class="single-product">
 								<div class="product-f-image">
-									<img src="${product.image}" alt="">
+									<img class="image" src="${product.image}" alt="">
 									<div class="product-hover">
 										<a href="#" class="add-to-cart-link"><i
 											class="fa fa-shopping-cart"></i> Add to cart</a> <a
-											href="/detail-product?id=${product.id}" class="view-details-link"><i
-											class="fa fa-link"></i> See details</a>
+											href="/detail-product?id=${product.id}"
+											class="view-details-link"><i class="fa fa-link"></i> See
+											details</a>
 									</div>
 								</div>
+								<div>
+									<h2>
+										<a href="single-product.html">${product.name}</a>
+									</h2>
 
-								<h2>
-									<a href="single-product.html">${product.name}</a>
-								</h2>
-
-								<div class="product-carousel-price">
-									<ins>${product.price}VND</ins>
+									<div class="product-carousel-price">
+										<ins>${product.price}VND</ins>
+									</div>
 								</div>
 							</div>
 						</c:forEach>
@@ -153,15 +156,16 @@
 				<div class="col-md-4">
 					<div class="single-product-widget">
 						<h2 class="product-wid-title">${category.name}</h2>
-						<a href="/product?category=${category.name}" class="wid-view-more">View All</a>
+						<a href="/product?category=${category.name}" class="wid-view-more">View
+							All</a>
 						<c:forEach items="${products}" var="product">
 							<c:if test="${category.name == product.category}">
 								<div class="single-wid-product">
-									<a href="single-product.html"><img
-										src="static/img/product-thumb-1.jpg" alt=""
+									<a href="/detail-product?id=${product.id}"><img
+										src="${product.image }" alt=""
 										class="product-thumb"></a>
 									<h2>
-										<a href="single-product.html">${product.name}</a>
+										<a href="/detail-product?id=${product.id}">${product.name}</a>
 									</h2>
 									<div class="product-wid-rating">
 										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -178,7 +182,7 @@
 					</div>
 				</div>
 			</c:forEach>
-			
+
 		</div>
 	</div>
 </div>
