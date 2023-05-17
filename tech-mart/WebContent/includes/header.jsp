@@ -13,7 +13,7 @@
 				<div class="col-md-8">
 					<div class="user-menu">
 						<ul>
-							<li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+							<li><a href="/admin"><i class="fa fa-user"></i> My Account</a></li>
 							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
 							<li><a href="cart.html"><i class="fa fa-user"></i> My
 									Cart</a></li>
