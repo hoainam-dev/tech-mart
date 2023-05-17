@@ -1,6 +1,5 @@
 <!-- include footer -->
 <jsp:include page="/includes/header.jsp" />
-<jsp:include page="/includes/slide.jsp" />
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
@@ -9,7 +8,6 @@
 	padding: 30px;
 }
 </style>
-
 <div class="slider-area">
 		<!-- Slider -->
 		<div class="block-slider block-slider4">

@@ -138,7 +138,7 @@
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount">£ <%= c.getPrice() %></span> 
+                                                <span class="amount"><%= c.getPrice() %> VND</span> 
                                             </td>
 
                                             <td class="product-quantity">
