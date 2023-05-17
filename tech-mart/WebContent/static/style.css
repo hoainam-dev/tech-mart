@@ -1,3 +1,7 @@
+.image-shop-product {
+	height: 250px;
+	width: 270px;
+}
 .floatleft { float: left }
 .floatright { float: right }
 .alignleft {
@@ -1106,6 +1110,9 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin-bottom: 15px;
 }
 
+.single-shop-product{
+	padding-top:10px;
+}
 
 
 .single-shop-product h2 {

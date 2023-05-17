@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +24,8 @@ public class ProductDetailController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ProductDAO productDAO = new ProductDAO();
+		List<Product> products = productDAO.getAllProduct();
+		request.setAttribute("products", products);
 		
 		String id = request.getParameter("id");
 		

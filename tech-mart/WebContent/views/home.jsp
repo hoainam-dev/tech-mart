@@ -3,9 +3,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
-.product-f-image {
-	height: 250px;
-	padding: 30px;
+.image {
+	height: 270px;
+	padding: 10px;
+	width: max;
 }
 </style>
 <div class="slider-area">
@@ -98,22 +99,23 @@
 						<c:forEach items="${products}" var="product">
 							<div class="single-product">
 								<div class="product-f-image">
-									<img src="${product.image}" alt="" style="height: 200px">
+									<img class="image" src="${product.image}" alt="">
 									<div class="product-hover">
-										<a href="add-to-cart?id=${product.id}"
-											class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
-											Add to cart</a> <a href="/detail-product?id=${product.id}"
+										<a href="add-to-cart?id=${product.id}" class="add-to-cart-link"><i
+											class="fa fa-shopping-cart"></i> Add to cart</a> <a
+											href="/detail-product?id=${product.id}"
 											class="view-details-link"><i class="fa fa-link"></i> See
 											details</a>
 									</div>
 								</div>
+								<div>
+									<h2>
+										<a href="single-product.html">${product.name}</a>
+									</h2>
 
-								<h2>
-									<a href="single-product.html">${product.name}</a>
-								</h2>
-
-								<div class="product-carousel-price">
-									<ins>${product.price}VND</ins>
+									<div class="product-carousel-price">
+										<ins>${product.price}VND</ins>
+									</div>
 								</div>
 							</div>
 						</c:forEach>
@@ -154,7 +156,8 @@
 				<div class="col-md-4">
 					<div class="single-product-widget">
 						<h2 class="product-wid-title">${category.name}</h2>
-						<a href="/product?category=${category.name}" class="wid-view-more">View All</a>
+						<a href="/product?category=${category.name}" class="wid-view-more">View
+							All</a>
 						<c:forEach items="${products}" var="product">
 							<c:if test="${count<3}">
 								<c:if test="${category.name == product.category}">
