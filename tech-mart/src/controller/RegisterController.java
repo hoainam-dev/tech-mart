@@ -13,7 +13,6 @@ import dao.UserDAO;
 import model.User;
 
 
-@WebServlet(name = "register", value = "/register")
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

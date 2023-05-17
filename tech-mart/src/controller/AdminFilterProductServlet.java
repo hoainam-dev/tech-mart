@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "AdminFilterProductServlet", value = "/filter")
+@WebServlet(name = "AdminFilterProductServlet", value = "/admin/filter")
 public class AdminFilterProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -34,7 +36,7 @@ public class AdminFilterProductServlet extends HttpServlet {
         request.setAttribute("categories" , categories);
         int total = list.size();
         request.setAttribute("total", total);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/AdminFilter.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/AdminFilter.jsp");
         dispatcher.forward(request, response);
     }
 }

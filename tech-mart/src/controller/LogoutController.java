@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import utils.CookieUtils;
 
-@WebServlet(name = "logout", value = "/logout")
 public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

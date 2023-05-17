@@ -16,8 +16,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet(name = "AdminProductServlet", value = "/product")
+@WebServlet(name = "AdminProductServlet", value = "/admin/product")
 public class AdminProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -66,7 +68,7 @@ public class AdminProductServlet extends HttpServlet {
         int total = productDAO.getTotal();
         request.setAttribute("total", total);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/AdminProduct.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/AdminProduct.jsp");
         dispatcher.forward(request, response);
     }
     // view a product
@@ -75,7 +77,7 @@ public class AdminProductServlet extends HttpServlet {
         ProductDAO productDAO = new ProductDAO();
         Product product = productDAO.getProductById(id);
         request.setAttribute("product", product);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/AdminDetailProduct.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/AdminDetailProduct.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -104,7 +106,7 @@ public class AdminProductServlet extends HttpServlet {
             }
         }
         request.setAttribute("checkCategory", checkCategory);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/adminUpdateProduct.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/adminUpdateProduct.jsp");
         dispatcher.forward(request, response);
 
     }
