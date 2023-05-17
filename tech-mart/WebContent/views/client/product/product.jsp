@@ -37,9 +37,9 @@
 		<div class="row">
 		<c:forEach items="${products}" var="product">
 			<div class="col-md-3 col-sm-6">
-				<div class="single-shop-product">
+				<div class="single-shop-product">	
 					<div class="product-upper">
-						<img src="${product.image}" alt="">
+						<img src="${product.image}" alt="" style="height:220px">
 					</div>
 					<h2>
 						<a href="">${product.name}</a>
