@@ -1,6 +1,6 @@
 package model;
 
-public class Order {
+public class Order extends Product{
 	private int id;
 	private String user;
 	private int quantity;

@@ -1,5 +1,6 @@
 <!-- include footer -->
 <jsp:include page="/includes/header.jsp" />
+<jsp:include page="/includes/slide.jsp" />
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
@@ -101,7 +102,7 @@
 								<div class="product-f-image">
 									<img src="${product.image}" alt="">
 									<div class="product-hover">
-										<a href="#" class="add-to-cart-link"><i
+										<a href="add-to-cart?id=${product.id}" class="add-to-cart-link"><i
 											class="fa fa-shopping-cart"></i> Add to cart</a> <a
 											href="/detail-product?id=${product.id}" class="view-details-link"><i
 											class="fa fa-link"></i> See details</a>
