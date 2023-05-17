@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%--    <link rel="stylesheet" th:href="@{static/dashboard.css}">--%>
-  <link href="./static/css/dashboard.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/dashboard.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
 </head>
@@ -25,7 +25,7 @@
   <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="row">
       <div class="col-6">
-       <a href="add">
+       <a href="add-product">
           <button class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Add New</button></a>
            </div>
       <div class="col-6">

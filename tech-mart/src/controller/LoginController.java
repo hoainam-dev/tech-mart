@@ -14,7 +14,6 @@ import dao.LoginDAO;
 import model.User;
 import utils.CookieUtils;
 
-
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -41,11 +40,18 @@ public class LoginController extends HttpServlet {
 
 			HttpSession session = request.getSession();
 
-			session.setAttribute("sessuser", user.getEmail());
-			request.setAttribute("message", "Login success");
-			request.setAttribute("user", user);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("views/home.jsp");
-			dispatcher.forward(request, response);
+			if(user.getEmail().equals("admin@gmail.com")) {
+				session.setAttribute("sessuser", user.getEmail());
+				request.setAttribute("message", "Login success");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/AdminHome.jsp");
+				dispatcher.forward(request, response);
+			}else {
+				session.setAttribute("sessuser", user.getEmail());
+				request.setAttribute("message", "Login success");
+				request.setAttribute("user", user);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("views/home.jsp");
+				dispatcher.forward(request, response);
+			}
 		} else {
 			request.setAttribute("msg", "Authentication failure.");
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/auth/login.jsp");

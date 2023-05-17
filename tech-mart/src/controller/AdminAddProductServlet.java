@@ -14,14 +14,16 @@ import java.io.IOException;
 
 import java.util.List;
 
-@WebServlet(name = "AdminAddProductServlet", value = "/add")
+@WebServlet(name = "AdminAddProductServlet", value = "/admin/add-product")
 public class AdminAddProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryDAO categoryDAO = new CategoryDAO();
         List<Category> categories = categoryDAO.getAllCategory();
         request.setAttribute("categories", categories);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/adminAddProduct.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/adminAddProduct.jsp");
         dispatcher.forward(request, response);
 
     }
@@ -50,7 +52,7 @@ public class AdminAddProductServlet extends HttpServlet {
                 CategoryDAO categoryDAO = new CategoryDAO();
                 List<Category> categories = categoryDAO.getAllCategory();
                 request.setAttribute("categories", categories);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin/adminAddProduct.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/views/admin/adminAddProduct.jsp");
                 dispatcher.forward(request, response);
             }
 

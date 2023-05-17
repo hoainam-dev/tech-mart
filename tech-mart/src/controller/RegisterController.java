@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.UserDAO;
 import model.User;
 
-
-
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

@@ -22,17 +22,17 @@
 <div class="navigation">
   <ul>
     <li>
-      <a href="admin">
+      <a href="/admin">
         <span class="icon"><i class="fa-solid fa-house"></i></span>
         <span class="title">Home</span>
       </a>
     </li>
-    <!-- <li>
-              <a href="#">
-                  <span class="icon"></span>
-                  <span class="icon">Home</span>
-              </a>
-          </li> -->
+	<li>
+      <a href="/">
+        <span class="icon"><i  class="fa-solid fa-lock"></i></span>
+        <span class="title">View Client</span>
+      </a>
+    </li>
     <li>
       <a href="#">
         <span class="icon"><i class="fa-solid fa-user"></i></span>
@@ -40,7 +40,7 @@
       </a>
     </li>
     <li>
-      <a href="${pageContext.request.contextPath}/product">
+      <a href="/admin/product">
         <span class="icon"><i class="fa-solid fa-message"></i></span>
         <span class="title">Products</span>
       </a>
