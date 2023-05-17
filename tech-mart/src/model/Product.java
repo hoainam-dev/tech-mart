@@ -11,10 +11,19 @@ public class Product {
 	public Product() {
 	}
 	
+	public Product(String name, String category, String description, double price, String image) {
+		this.name = name;
+		this.category = category;
+		this.description = description; 
+		this.price = price;
+		this.image = image;
+	}
+	
 	public Product(int id, String name, String category, String description, double price, String image) {
 		this.id = id;
 		this.name = name;
 		this.category = category;
+		this.description = description;  
 		this.price = price;
 		this.image = image;
 	}

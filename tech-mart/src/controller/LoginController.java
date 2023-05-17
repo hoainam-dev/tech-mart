@@ -49,8 +49,7 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("sessuser", user.getEmail());
 				request.setAttribute("message", "Login success");
 				request.setAttribute("user", user);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("views/home.jsp");
-				dispatcher.forward(request, response);
+				response.sendRedirect("/");
 			}
 		} else {
 			request.setAttribute("msg", "Authentication failure.");

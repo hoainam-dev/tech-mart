@@ -31,10 +31,6 @@
     <h1 class="mb-4">Add Product</h1>
     <form action="add-product" method="POST" >
         <div class="form-group">
-            <label for="productName">Product ID:</label>
-            <input type="text" class="form-control" id="productId" name="id" required>
-        </div>
-        <div class="form-group">
             <label for="productName">Product Name:</label>
             <input type="text" class="form-control" id="productName" name="name" required>
         </div>
