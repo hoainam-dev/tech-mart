@@ -1,6 +1,5 @@
 <!-- include footer -->
 <jsp:include page="/includes/header.jsp" />
-<jsp:include page="/includes/slide.jsp" />
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
@@ -10,7 +9,6 @@
 	width: max;
 }
 </style>
-
 <div class="slider-area">
 	<!-- Slider -->
 	<div class="block-slider block-slider4">
@@ -154,32 +152,34 @@
 	<div class="container">
 		<div class="row">
 			<c:forEach items="${categories}" var="category">
+				<c:set var="count" value="${0}" />
 				<div class="col-md-4">
 					<div class="single-product-widget">
 						<h2 class="product-wid-title">${category.name}</h2>
 						<a href="/product?category=${category.name}" class="wid-view-more">View
 							All</a>
 						<c:forEach items="${products}" var="product">
-							<c:if test="${category.name == product.category}">
-								<div class="single-wid-product">
-									<a href="/detail-product?id=${product.id}"><img
-										src="${product.image }" alt=""
-										class="product-thumb"></a>
-									<h2>
-										<a href="/detail-product?id=${product.id}">${product.name}</a>
-									</h2>
-									<div class="product-wid-rating">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i>
+							<c:if test="${count<3}">
+								<c:if test="${category.name == product.category}">
+									<div class="single-wid-product">
+										<a href="single-product.html"><img
+											src="${product.image}" alt="" class="product-thumb"></a>
+										<h2>
+											<a href="single-product.html">${product.name}</a>
+										</h2>
+										<div class="product-wid-rating">
+											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+												class="fa fa-star"></i>
+										</div>
+										<div class="product-wid-price">
+											<ins>${product.price}VND</ins>
+										</div>
 									</div>
-									<div class="product-wid-price">
-										<ins>${product.price}VNĐ</ins>
-									</div>
-								</div>
+									<c:set var="count" value="${count+1}" />
+								</c:if>
 							</c:if>
 						</c:forEach>
-
 					</div>
 				</div>
 			</c:forEach>

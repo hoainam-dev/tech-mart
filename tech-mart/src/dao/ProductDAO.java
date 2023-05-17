@@ -73,13 +73,12 @@ public class ProductDAO {
 	Connection con;
 	try {
 		con = db.openConnection();
-		PreparedStatement statement = con.prepareStatement("INSERT INTO products(id ,category_id, name, description, price, image)VALUES (?,?,?,?,?,?);");
-		statement.setInt(1, product.getId());
-		statement.setInt(2, categoryId);
-		statement.setString(3, product.getName());
-		statement.setString(4, product.getDescription());
-		statement.setDouble(5, product.getPrice());
-		statement.setString(6, product.getImage());
+		PreparedStatement statement = con.prepareStatement("INSERT INTO products(category_id, name, description, price, image)VALUES (?,?,?,?,?);");
+		statement.setInt(1, categoryId);
+		statement.setString(2, product.getName());
+		statement.setString(3, product.getDescription());
+		statement.setDouble(4, product.getPrice());
+		statement.setString(5, product.getImage());
 		statement.executeUpdate();
 	} catch (SQLException ex) {
 		Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
