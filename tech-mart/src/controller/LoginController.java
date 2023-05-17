@@ -20,15 +20,6 @@ public class LoginController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username= CookieUtils.get("cookuser", request);
-		
-//		if (username != null && !username.equals("")) {
-////			request.setAttribute("message","Login successful");
-////			 HttpSession session = request.getSession();
-////			 session.setAttribute("username", username);
-//			request.getRequestDispatcher("views/home.jsp").forward(request,response);
-//			return;
-//		}
 		request.getRequestDispatcher("views/auth/login.jsp").forward(request,response);
 		
 	}
@@ -39,6 +30,7 @@ public class LoginController extends HttpServlet {
 		String remember = request.getParameter("remember");
 		LoginDAO loginDAO = new LoginDAO();
 		User user = loginDAO.checkLogin(new User(username, password));
+
 		if (user != null) {
 			// This is point where user click the remember button
 			if (remember != null) {

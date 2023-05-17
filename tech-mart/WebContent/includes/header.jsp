@@ -13,16 +13,15 @@
 				<div class="col-md-8">
 					<div class="user-menu">
 						<ul>
-							<li><a href="/admin"><i class="fa fa-user"></i> My Account</a></li>
 							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-							<li><a href="cart.html"><i class="fa fa-user"></i> My
-									Cart</a></li>
-							<li><a href="checkout.html"><i class="fa fa-user"></i>Checkout</a></li>
+							<li><a href="#"><i class="fa fa-user"></i>Checkout</a></li>
 							<c:choose>
 								<c:when test="${user==null}">
 									<li><a href="/login"><i class="fa fa-user"></i> Login</a></li>
   								</c:when>
-								<c:otherwise> 
+								<c:otherwise>
+									<li><a href="/admin/add-product"><i class="fa fa-user"></i>Add Product</a></li>
+									<li><a href="/cart"><i class="fa fa-user"></i> My Cart</a></li> 
 									<li><a href="#"><i class="fa fa-user"></i><%=session.getAttribute("sessuser")%></a></li>
 									<li><a href="logout">Logout</a></li>
   								</c:otherwise>
@@ -30,7 +29,6 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="col-md-4">
 					<div class="header-right">
 						<ul class="list-unstyled list-inline">
@@ -101,7 +99,7 @@
 						<li><a href="single-product.html">Single product</a></li>
 						<li><a href="cart.html">Cart</a></li>
 						<li><a href="checkout.html">Checkout</a></li>
-						<li><a href="#">Category</a></li>
+						<li><a href="/admin/category">Category</a></li>
 						<li><a href="#">Others</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>

@@ -3,20 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Register</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Register</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
+<style>
+	.submit{
+		text-align: center;
+		justify-content: center;
+	}
+	
+	.submit button{
+		width: 100%;
+	}
+</style>
 <body>
 	<div class="container">
 		<div class="offset-3 col-6">
-			<br> <br>
-			<a style="text-decoration:none" href="/login">Back</a>
-			<div class="row"><a href="/"><i style="font-size:30px" class="fas fa-home"></i></a></div>
-			<br>
-			<p class="h3">Register</p>
+			<br><br>
+			<div class="row">
+				<div class="col-1">
+					<a href="/login"><i style="font-size:30px" class="fas fa-arrow-left"></i></a>
+				</div>
+				<div class="col-1">
+					<a href="/"><i style="font-size:30px" class="fas fa-home"></i></a>
+				</div>
+			</div><br>
+			<p class="h3">Register</p><br>
 			<form action="register" method="POST">
 			<%=request.getAttribute("msg") != null ? request.getAttribute("msg") : ""%>
 				<div class="form-group">
@@ -41,7 +55,9 @@
 						type="password" class="form-control" name="confirmpassword" size="50"
 						autocomplete="off"/>
 				</div>
-				<button type="submit" class="btn btn-primary">Register</button>
+				<div class="submit">
+					<button type="submit" class="btn btn-primary">Register</button>
+				</div>
 			</form>
 		</div>
 	</div>
