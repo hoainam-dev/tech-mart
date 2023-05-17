@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import connectdb.ConnectDB;
+import model.Cart;
 import model.Category;
 import model.Product;
 
@@ -190,5 +191,69 @@ public class ProductDAO {
 	public static void main(String[] args) {
 		ProductDAO productDAO = new ProductDAO();
  		productDAO.getAllProduct();
+	}
+	public double getTotalCartPrice(ArrayList<Cart> cartList) throws ClassNotFoundException {
+        ConnectDB db = ConnectDB.getInstance();
+        String query = "  SELECT * FROM Products\n"
+                            + "WHERE id=?;";
+        Connection con = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        double sum = 0;
+        try {
+           
+            if (cartList.size() > 0) {
+                for (Cart item : cartList) {
+                    con = db.openConnection();
+                    statement = con.prepareStatement(query);
+                    statement.setInt(1, item.getId());
+                    rs = statement.executeQuery();
+                    while (rs.next()) {
+                        sum += rs.getDouble("price") * item.getQuantity();
+                    }
+
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return sum;
+    }
+	
+	public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
+		ConnectDB db = ConnectDB.getInstance();
+        String query = "  SELECT * FROM products\n"
+                            + "WHERE id=?;";
+        Connection con = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        List<Cart> products = new ArrayList<>();
+		try {
+			if(cartList.size()>0) {
+				for(Cart item:cartList) {
+					con = db.openConnection();
+					statement = con.prepareStatement(query);
+                    statement.setInt(1, item.getId());
+                    rs = statement.executeQuery();
+                    
+				 	while (rs.next()) {
+				 		Cart row = new Cart();
+				 		row.setId(rs.getInt("id"));
+				 		row.setName(rs.getString("name"));
+				 		row.setDescription(rs.getString("description"));
+				 		row.setPrice(rs.getDouble("price")*item.getQuantity());
+				 		row.setQuantity(item.getQuantity());
+				 		row.setImage(rs.getString("image"));
+				 		products.add(row);
+				 	}
+				}
+			}
+			
+		}catch(Exception e) {
+			System.out.print(e.getMessage());
+		}
+		return products;
 	}
 }
