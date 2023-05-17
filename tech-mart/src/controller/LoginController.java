@@ -14,7 +14,7 @@ import dao.LoginDAO;
 import model.User;
 import utils.CookieUtils;
 
-@WebServlet(name = "login", value = "/login")
+
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
