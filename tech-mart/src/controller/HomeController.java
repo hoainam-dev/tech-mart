@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UserDAO;
-import model.User;
+import dao.CategoryDAO;
+import dao.ProductDAO;
+import model.Category;
+import model.Product;
 
 
 public class HomeController extends HttpServlet {
@@ -17,12 +19,15 @@ public class HomeController extends HttpServlet {
   
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserDAO userDAO = new UserDAO();
+		ProductDAO productDAO = new ProductDAO();
+		CategoryDAO categoryDAO = new CategoryDAO();
 		
-		List<User> users = userDAO.getAllUsers();
-
-		request.setAttribute("users", users);
-		request.getRequestDispatcher("views/home.jsp").forward(request,response);
+		List<Category> categories = categoryDAO.getAllCategory();
+		request.setAttribute("categories", categories);
+		
+		List<Product> products = productDAO.getAllProduct();
+		request.setAttribute("products", products);
+		request.getRequestDispatcher("views/home.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
