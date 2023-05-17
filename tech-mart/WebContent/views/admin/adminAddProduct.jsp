@@ -29,7 +29,7 @@
 
 
     <h1 class="mb-4">Add Product</h1>
-    <form action="add" method="POST" >
+    <form action="add-product" method="POST" >
         <div class="form-group">
             <label for="productName">Product ID:</label>
             <input type="text" class="form-control" id="productId" name="id" required>

@@ -101,11 +101,7 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="/">Home</a></li>
-						<li><a href="shop.html">Shop page</a></li>
-						<li><a href="single-product.html">Single product</a></li>
-						<li><a href="cart.html">Cart</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
-						<li><a href="/admin/category">Category</a></li>
+						<li><a href="/product">Shop page</a></li>
 						<li><a href="#">Others</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
@@ -113,4 +109,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- End mainmenu area -->

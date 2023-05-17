@@ -10,6 +10,52 @@
 }
 </style>
 
+<div class="slider-area">
+		<!-- Slider -->
+		<div class="block-slider block-slider4">
+			<ul class="" id="bxslider-home4">
+				<li><img src="static/img/h4-slide.png" alt="Slide">
+					<div class="caption-group">
+						<h2 class="caption title">
+							iPhone <span class="primary">6 <strong>Plus</strong></span>
+						</h2>
+						<h4 class="caption subtitle">Dual SIM</h4>
+						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+							now</a>
+					</div></li>
+				<li><img src="static/img/h4-slide2.png" alt="Slide">
+					<div class="caption-group">
+						<h2 class="caption title">
+							by one, get one <span class="primary">50% <strong>off</strong></span>
+						</h2>
+						<h4 class="caption subtitle">school supplies & backpacks.*</h4>
+						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+							now</a>
+					</div></li>
+				<li><img src="static/img/h4-slide3.png" alt="Slide">
+					<div class="caption-group">
+						<h2 class="caption title">
+							Apple <span class="primary">Store <strong>Ipod</strong></span>
+						</h2>
+						<h4 class="caption subtitle">Select Item</h4>
+						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+							now</a>
+					</div></li>
+				<li><img src="static/img/h4-slide4.png" alt="Slide">
+					<div class="caption-group">
+						<h2 class="caption title">
+							Apple <span class="primary">Store <strong>Ipod</strong></span>
+						</h2>
+						<h4 class="caption subtitle">& Phone</h4>
+						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
+							now</a>
+					</div></li>
+			</ul>
+		</div>
+		<!-- ./Slider -->
+	</div>
+	<!-- End slider area -->
+	
 <!-- main area -->
 <div class="promo-area">
 	<div class="zigzag-bottom"></div>
@@ -58,7 +104,7 @@
 									<div class="product-hover">
 										<a href="add-to-cart?id=${product.id}" class="add-to-cart-link"><i
 											class="fa fa-shopping-cart"></i> Add to cart</a> <a
-											href="single-product.html" class="view-details-link"><i
+											href="/detail-product?id=${product.id}" class="view-details-link"><i
 											class="fa fa-link"></i> See details</a>
 									</div>
 								</div>
@@ -78,26 +124,6 @@
 		</div>
 	</div>
 </div>
-
-<div>
-	<table>
-		<tr>
-			<th>ID</th>
-			<th>FirstName</th>
-			<th>LastName</th>
-			<th>Email</th>
-		</tr>
-		<c:forEach items="${users}" var="user">
-			<tr>
-				<td>${user.id}</td>
-				<td>${user.firstName}</td>
-				<td>${user.lastName}</td>
-				<td>${user.email}</td>
-			</tr>
-		</c:forEach>
-	</table>
-</div>
-
 <div class="brands-area">
 	<div class="zigzag-bottom"></div>
 	<div class="container">
@@ -119,7 +145,6 @@
 		</div>
 	</div>
 </div>
-End brands area
 
 <div class="product-widget-area">
 	<div class="zigzag-bottom"></div>
